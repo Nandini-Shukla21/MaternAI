@@ -1,0 +1,2 @@
+# MaternAI
+MaternAI – Pregnancy Risk Prediction  Developed a machine learning model to predict **pregnancy risk level (High/Low)** using clinical data. Achieved **97% accuracy** with Random Forest after hyperparameter tuning.  * Engineered features like **Hemoglobin, BMI, Previous Complications** * Scaled data using **StandardScaler**, visualized correlations * Built a **Streamlit web app** for real-time predictions * Model saved as `maternAI_rf_model.pkl` for deployment  **Tech Stack:** Python, Scikit-learn, Streamlit, Pandas, XGBoost  .
