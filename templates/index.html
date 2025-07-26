@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaternAI</title>
+    <link rel="stylesheet" href="static/style.css" />
+</head>
+
+<body>
+    <header class="navbar" role="banner">
+        <div class="logo">
+            <span class="emoji" aria-hidden="true">🤰</span>
+            <span class="name">Matern<span class="gradient">AI</span></span>
+        </div>
+        <nav aria-label="Main navigation">
+            <a href="#about" class="nav-link">About</a>
+            <button id="openModalBtn" class="btn-gradient">Predict Risk</button>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <h1><span class="emoji" aria-hidden="true">🤰</span> <span class="gradient">MaternAI</span></h1>
+            <h2>Pregnancy Risk Level Predictor</h2>
+            <p>
+                Check your pregnancy risk with our advanced AI model,
+                <span class="highlight">whose accuracy is almost 97%</span>.
+                Get instant, reliable predictions to help ensure a healthy pregnancy journey.
+            </p>
+            <button id="checkNowBtn" class="btn-gradient big" aria-label="Check pregnancy risk now">Check Now →</button>
+        </div>
+    </main>
+
+    <section class="about-section" id="about">
+        <h2>Why Choose MaternAI?</h2>
+        <p>
+            Our AI-powered system provides comprehensive pregnancy risk assessment using
+            advanced machine learning algorithms.
+        </p>
+
+        <div class="cards-container">
+            <div class="card" role="region" aria-label="Accuracy feature">
+                <div class="icon">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/like--v1.png" alt="Heart Icon" />
+                </div>
+                <h3>97% Accuracy</h3>
+                <p>
+                    Our advanced AI model provides highly accurate pregnancy risk predictions
+                    based on comprehensive medical data analysis.
+                </p>
+            </div>
+
+            <div class="card" role="region" aria-label="Security feature">
+                <div class="icon">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/security-checked.png" alt="Security Icon" />
+                </div>
+                <h3>Safe & Secure</h3>
+                <p>
+                    Your medical information is protected with enterprise-grade security. We prioritize your privacy and
+                    data protection.
+                </p>
+            </div>
+
+            <div class="card" role="region" aria-label="Expert backing">
+                <div class="icon">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/conference.png" alt="Expert Icon" />
+                </div>
+                <h3>Expert Backed</h3>
+                <p>
+                    Developed in collaboration with medical professionals and validated against real-world clinical
+                    data.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3><span class="emoji" aria-hidden="true">🤰</span> <span class="gradient">MaternAI</span></h3>
+                <p>
+                    Advanced AI-powered pregnancy risk prediction system designed to support
+                    expectant mothers and healthcare providers with accurate, reliable risk assessments.
+                </p>
+                <p class="footer-note">❤️ Made with care for mothers worldwide</p>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" aria-label="About MaternAI page">About MaternAI</a></li>
+                    <li><a href="#" aria-label="How MaternAI works">How It Works</a></li>
+                    <li><a href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="#" aria-label="Terms of Service">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>📧 <a href="mailto:support@maternai.com">support@maternai.com</a></li>
+                    <li>📞 <a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                    <li>📍 Healthcare Innovation Center</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 MaternAI. All rights reserved. |
+            <span class="disclaimer">
+                For informational purposes only – Always consult healthcare professionals.
+            </span>
+        </div>
+    </footer>
+
+    <div id="formModal" class="modal hidden" role="dialog" aria-labelledby="modalTitle">
+  <div class="modal-content">
+    <span class="close" aria-label="Close modal">×</span>
+    <h2 id="modalTitle">Pregnancy Risk Assessment</h2>
+    <form class="form-grid" id="riskForm" aria-describedby="formDescription">
+      <p id="formDescription" class="form-description">
+        Please fill out all required fields to get your pregnancy risk assessment.
+      </p>
+
+      <div class="form-group">
+        <input type="number" id="age" name="age" placeholder=" " required min="15" max="50" />
+        <label for="age">Age (years) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="systolicBP" name="systolicBP" placeholder=" " required min="80" max="200" />
+        <label for="systolicBP">Systolic Blood Pressure (mmHg) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="diastolicBP" name="diastolicBP" placeholder=" " required min="50" max="120" />
+        <label for="diastolicBP">Diastolic Blood Pressure (mmHg) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="bloodSugar" name="bloodSugar" placeholder=" " required min="50" max="300" />
+        <label for="bloodSugar">Blood Sugar (mg/dL) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="bodyTemp" name="bodyTemp" step="0.1" placeholder=" " required min="95" max="104" />
+        <label for="bodyTemp">Body Temperature (°F) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="heartRate" name="heartRate" placeholder=" " required min="40" max="120" />
+        <label for="heartRate">Heart Rate (bpm) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="pregnancies" name="pregnancies" placeholder=" " required min="1" max="20" />
+        <label for="pregnancies">Number of Pregnancies *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="complications" name="complications" placeholder=" " required min="0" max="1" />
+        <label for="complications">Previous Complications (0=No, 1=Yes) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="hemoglobin" name="hemoglobin" step="0.1" placeholder=" " required min="8" max="18" />
+        <label for="hemoglobin">Hemoglobin Level (g/dL) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="bmi" name="bmi" step="0.1" placeholder=" " required min="15" max="50" />
+        <label for="bmi">BMI (Body Mass Index) *</label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-status" id="formStatus"></div>
+
+      <div class="form-actions">
+        <button type="submit" id="submitBtn">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <script>
+        const modal = document.getElementById("formModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const checkNowBtn = document.getElementById("checkNowBtn");
+    const closeBtn = document.querySelector(".close");
+    const form = document.getElementById("riskForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formStatus = document.getElementById("formStatus");
+
+    const openModal = () => {
+      modal.classList.remove("hidden");
+      modal.querySelector("input").focus();
+    };
+
+    [openBtn, checkNowBtn].forEach(btn => {
+      btn.addEventListener("click", openModal);
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      form.reset();
+      formStatus.textContent = "";
+      document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        form.reset();
+        formStatus.textContent = "";
+        document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+      }
+    });
+
+    const validateInput = (input) => {
+  const errorMessage = input.nextElementSibling.nextElementSibling;
+
+  // Convert values to numbers
+  const value = parseFloat(input.value);
+  const min = parseFloat(input.min);
+  const max = parseFloat(input.max);
+
+  if (isNaN(value)) {
+    errorMessage.textContent = "This field is required";
+    return false;
+  }
+
+  if (value < min || value > max) {
+    errorMessage.textContent = `Value must be between ${min} and ${max}`;
+    return false;
+  }
+
+  errorMessage.textContent = "";
+  return true;
+};
+
+
+    form.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", () => validateInput(input));
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      let isValid = true;
+      const inputs = {};
+
+      form.querySelectorAll("input").forEach(input => {
+        if (!validateInput(input)) isValid = false;
+        inputs[input.id] = parseFloat(input.value);
+      });
+
+      if (!isValid) {
+        formStatus.textContent = "Please correct the errors in the form";
+        formStatus.classList.add("error");
+        formStatus.classList.remove("success");
+        return;
+      }
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Processing...";
+        formStatus.textContent = "";
+
+        const response = await fetch("/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(inputs)
+        });
+
+        const result = await response.json();
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+
+        if (result.prediction) {
+          formStatus.textContent = `Prediction: ${result.prediction}`;
+          formStatus.classList.add("success");
+          formStatus.classList.remove("error");
+        } else {
+          throw new Error(result.error || "Unexpected error");
+        }
+
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+        formStatus.textContent = `Error: ${err.message}`;
+        formStatus.classList.add("error");
+        formStatus.classList.remove("success");
+      }
+    });
+    </script>
+
+</body>
+
+</html>
