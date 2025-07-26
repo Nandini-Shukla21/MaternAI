@@ -1,6 +1,4 @@
-Here's a clean and professional **project description** for your MaternAI pregnancy risk prediction project — suitable for your resume, GitHub, LinkedIn, or portfolio:
 
----
 
 ## 🩺 MaternAI: Pregnancy Risk Level Prediction
 
